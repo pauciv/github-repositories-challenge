@@ -1,9 +1,7 @@
-import Overview from './Overview'
 import Repositories from './Repositories'
-import Projects from './Projects'
+import Home from './Home'
 
 export {
-    Overview, 
     Repositories, 
-    Projects
+    Home,
 }

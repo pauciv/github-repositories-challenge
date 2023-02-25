@@ -1,21 +1,17 @@
 import { Routes, Route } from 'react-router-dom'
 import { Container } from 'react-bootstrap'
-import { Overview, Projects, Repositories } from './pages'
-import { Navbar } from './components'
-
-
+import { Home, Repositories } from './pages'
+import SearchBar from './components/SearchBar'
 
 function App() {
   return (
     <>
-    <Navbar />
-    <Container className='mb-4'>
-      <Routes>
-        <Route path='/' element={<Overview />} />
-        <Route path='/repositories' element={<Repositories />} />
-        <Route path='/projects' element={<Projects />} />
-      </Routes>
-    </Container>
+      <Container className='mb-4'>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/:username' element={<Repositories />} />
+        </Routes>
+      </Container>
     </>
   )
 }
