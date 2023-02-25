@@ -1,7 +1,7 @@
 import getRepositoriesByUser from "./getRepositoriesByUser"
-import getOneUser from "./getOneUser"
+import getUser from "./getUser"
 
 export {
     getRepositoriesByUser,
-    getOneUser,
+    getUser,
 }

@@ -1,8 +1,8 @@
-import SearchBar from "../components/SearchBar"
+import SearchUser from "../components/SearchUser"
 
 const Home = () => {
   return (
-    <SearchBar />
+    <h1>Home</h1>
   )
 }
 

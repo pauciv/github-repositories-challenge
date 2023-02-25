@@ -12,7 +12,7 @@ interface User {
     repos_url: string
 }
 
-const fetchOneUser = async (username: string): Promise<User | undefined > => {
+const getUser = async (username: string): Promise<User | undefined > => {
       const res = await fetch(`https://api.github.com/users/${username}`, {
         headers: { 
           Authorization: `token ${githubToken}`,
@@ -40,4 +40,4 @@ const fetchOneUser = async (username: string): Promise<User | undefined > => {
       return user
 }
 
-export default fetchOneUser
+export default getUser

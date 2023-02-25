@@ -1,6 +1,6 @@
 import githubToken from "../config"
 
-interface Repository {
+export interface Repository {
   id: number
   name: string
   description: string
@@ -19,6 +19,7 @@ interface Repository {
 }
 
 const getRepositoriesByUser = async (username: string): Promise<Repository[] | undefined> => {
+      // en lugar de fetch, podemos utilizar graphQL
       const res = await fetch(`https://api.github.com/users/${username}/repos`, {
         headers: { 
           Authorization: `token ${githubToken}`,

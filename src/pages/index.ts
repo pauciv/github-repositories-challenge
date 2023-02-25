@@ -1,7 +1,7 @@
-import Repositories from './Repositories'
 import Home from './Home'
+import User from './User'
 
 export {
-    Repositories, 
     Home,
+    User, 
 }
