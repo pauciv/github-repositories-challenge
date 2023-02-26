@@ -1,20 +1,25 @@
 import { Routes, Route } from 'react-router-dom'
-import { Container } from 'react-bootstrap'
 import { Home, User } from './pages'
 import { Navbar } from './components'
+import styles from './style'
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Container className='mb-4'>
+const App = () => (
+  <div className='bg-primary w-full overflow-hidden'>
+    <div className={`${styles.paddingX} ${styles.flexCenter}`}>
+      <div className={`${styles.boxWidth}`}>
+        <Navbar />
+      </div>
+    </div>
+
+    <div className={`bg-primary ${styles.flexStart}`}>
+      <div className={`${styles.boxWidth}`}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/:username' element={<User />} />
         </Routes>
-      </Container>
-    </>
-  )
-}
+      </div>
+    </div>
+  </div>
+)
 
 export default App

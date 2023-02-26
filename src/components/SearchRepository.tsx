@@ -1,12 +1,11 @@
-import { ChangeEvent, useEffect, useState } from 'react';
-import { Form } from 'react-bootstrap';
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import { ChangeEvent, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Repository } from '../api/getRepositoriesByUser';
 
-interface SearchRepositoryProps {
+type SearchRepositoryProps = {
     repositories: Repository[]
     setFilteredRepositories: React.Dispatch<React.SetStateAction<Repository[]>>
-  }
+}
 
 const SearchRepository = ({ repositories, setFilteredRepositories }: SearchRepositoryProps) => {
     const [searchParmams, setSearchParams] = useSearchParams({ q: '' })
@@ -24,9 +23,9 @@ const SearchRepository = ({ repositories, setFilteredRepositories }: SearchRepos
   }
 
   return (
-    <Form>
-        <Form.Control type="search" value={searchValue} onChange={handleChange} placeholder="Find repository..." />
-    </Form>
+    <form>
+        <input type="search" value={searchValue} onChange={handleChange} placeholder="Find repository..." />
+    </form>
   )
 }
 

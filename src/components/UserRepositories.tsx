@@ -32,7 +32,6 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
 
   return (
     <>
-        <h1>Repositories</h1>
         <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
         {repositories && (
           <>

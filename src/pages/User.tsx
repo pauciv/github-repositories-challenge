@@ -1,6 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
-import { useNavigate, useParams, useSearchParams } from "react-router-dom";
-import { getRepositoriesByUser, getUser } from "../api";
+import { useParams } from "react-router-dom";
 import { UserInformation, UserRepositories } from "../components"
 
 const User = () => {
