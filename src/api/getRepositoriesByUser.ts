@@ -1,22 +1,5 @@
 import githubToken from "../config"
-
-export interface Repository {
-  id: number
-  name: string
-  description: string
-  language: string
-  forks_count: number
-  stargazers_count: number
-  updated_at: string
-  license: {
-    key: string
-    name: string
-  }
-  owner: {
-    id: number
-    login: string
-  }
-}
+import { Repository } from "../interfaces";
 
 const getRepositoriesByUser = async (username: string): Promise<Repository[] | undefined> => {
       // en lugar de fetch, podemos utilizar graphQL
@@ -37,13 +20,10 @@ const getRepositoriesByUser = async (username: string): Promise<Repository[] | u
         name: repository.name,
         description: repository.description,
         language: repository.language,
-        forks_count: repository.forks_count,
-        stargazers_count: repository.stargazers_count,
-        updated_at: repository.updated_at,
-        // license: {
-        //   key: repository.license.key,
-        //   name: repository.license.name,
-        // },
+        forksCount: repository.forks_count,
+        stargazersCount: repository.stargazers_count,
+        updatedAt: repository.updated_at,
+        htmlUrl: repository.html_url,
         owner: {
           id: repository.owner.id,
           login: repository.owner.login,

@@ -1,6 +1,7 @@
 import { ChangeEvent, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Repository } from '../api/getRepositoriesByUser';
+import { Repository } from '../interfaces';
+import styles from '../style';
 
 type SearchRepositoryProps = {
     repositories: Repository[]
@@ -23,8 +24,8 @@ const SearchRepository = ({ repositories, setFilteredRepositories }: SearchRepos
   }
 
   return (
-    <form>
-        <input type="search" value={searchValue} onChange={handleChange} placeholder="Find repository..." />
+    <form className='p-4'>
+      <input type="search" value={searchValue} onChange={handleChange} placeholder="Find repository..." className='rounded-l-lg rounded-r-lg py-[6px] px-4 bg-discount-gradient text-white w-full max-w-xl border border-slate-600' />
     </form>
   )
 }

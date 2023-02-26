@@ -1,16 +1,5 @@
 import githubToken from "../config"
-
-interface User {
-    id: number
-    name: string
-    login: string
-    avatar_url: string
-    bio: string
-    followers: number
-    following: number
-    location: string
-    repos_url: string
-}
+import { User } from "../interfaces";
 
 const getUser = async (username: string): Promise<User | undefined > => {
       const res = await fetch(`https://api.github.com/users/${username}`, {
@@ -29,12 +18,13 @@ const getUser = async (username: string): Promise<User | undefined > => {
         id: data.id,
         name: data.name,
         login: data.login,
-        avatar_url: data.avatar_url,
+        avatarUrl: data.avatar_url,
         bio: data.bio,
+        repos: data.public_repos,
         followers: data.followers,
         following: data.following,
         location: data.location,
-        repos_url: data.repos_url,
+        reposUrl: data.repos_url,
       }
 
       return user

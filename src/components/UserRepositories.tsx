@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import { getRepositoriesByUser } from "../api"
 import { Repository } from "../api/getRepositoriesByUser"
+import RepositoryCard from "./RepositoryCard"
 import SearchRepository from "./SearchRepository"
 
 type UserRepositoriesProps = {
@@ -35,11 +36,9 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
         <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
         {repositories && (
           <>
-            <ol>
               {filteredRepositories?.map(repository => (
-                <li key={repository.id}>{repository.name}</li>
+                <RepositoryCard key={repository?.id} {...repository} />
               ))}
-            </ol>
           </>
         )}
     </>
