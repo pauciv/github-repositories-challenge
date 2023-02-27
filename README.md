@@ -15,7 +15,7 @@ The following technologies and libraries were used to build this application:
 
 ## How to Run the Application
 To run the application, you will need to have Node.js installed on your computer. 
-Go to [NodeJS web page](https://nodejs.org/es/) download and install the program.
+Go to [NodeJS web page](https://nodejs.org/es/) to download and install the program.
 
 Then, follow these steps:
 
