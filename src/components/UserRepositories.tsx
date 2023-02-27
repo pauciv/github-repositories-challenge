@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import { getRepositoriesByUser } from "../api"
-import { Repository } from "../api/getRepositoriesByUser"
+import { Repository } from "../interfaces"
 import RepositoryCard from "./RepositoryCard"
 import SearchRepository from "./SearchRepository"
 
@@ -14,14 +14,26 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
     data: repositories,
     status,
     error,
-    // fetchStatus,
   } = useQuery({
     queryKey: ['repositories', username],
     queryFn: () => getRepositoriesByUser(username),
     enabled: !!username,
   })
 
-  const [filteredRepositories, setFilteredRepositories] = useState<Repository[]>(repositories);
+  const orderedRepositories = repositories?.sort((a, b) => {
+    const dateA = new Date(a.updated_at)
+    const dateB = new Date(b.updated_at)
+  
+    // Compare the dates and return either -1 (a should come first) or 1 (b should come first) to determine the sort order
+    if (dateA > dateB) {
+      return -1
+    } else if (dateB > dateA) {
+      return 1
+    }
+    return 0
+  })
+
+  const [filteredRepositories, setFilteredRepositories] = useState<Repository[]>(orderedRepositories)
 
   if (status === 'loading') {
     return <p>Loading...</p>
@@ -34,13 +46,9 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
   return (
     <>
         <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
-        {repositories && (
-          <>
-              {filteredRepositories?.map(repository => (
-                <RepositoryCard key={repository?.id} {...repository} />
-              ))}
-          </>
-        )}
+        {filteredRepositories?.map(repository => (
+          <RepositoryCard key={repository?.id} {...repository} />
+        ))}
     </>
   )
 }

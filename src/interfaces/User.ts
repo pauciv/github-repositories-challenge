@@ -2,13 +2,13 @@ interface User {
     id: number
     name: string
     login: string
-    avatarUrl: string
+    avatar_url: string
     bio: string
     repos: number
     followers: number
     following: number
     location: string
-    reposUrl: string
+    repos_url: string
 }
 
 export default User

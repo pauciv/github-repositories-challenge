@@ -1,6 +1,6 @@
-const formatUpdatedAt = (updatedAt: string): string => {
+const formatUpdatedAt = (updated_at: string): string => {
   const now = new Date();
-  const updatedAtDate = new Date(updatedAt);
+  const updatedAtDate = new Date(updated_at);
   const timeDiff = Math.abs(now.getTime() - updatedAtDate.getTime());
   const diffDays = Math.floor(timeDiff / (1000 * 3600 * 24));
   const diffWeeks = Math.floor(diffDays / 7);

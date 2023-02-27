@@ -38,9 +38,8 @@ const SearchUser: FC = () => {
           <form
             onSubmit={handleSubmit} className={`${!toggle ? "hidden" : "flex"} rounded-xl w-full`}
           >
-            <input type="search" name="search" placeholder="Search user..." className="p-2.5 w-full text-sm rounded-l-lg" />
+            <input type="search" name="search" placeholder="Search user..." className="p-2.5 w-full rounded-l-lg" />
             <button type="submit" className="top-0 right-0 p-2.5 rounded-r-lg px-6 font-medium text-[16px] text-primary bg-blue-gradient outline-none">
-            {/* <button type="submit" className="top-0 right-0 p-2.5 text-sm text-white bg-blue-700 rounded-r-lg border border-blue-700 hover:bg-blue-800 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"> */}
               <AiOutlineSearch />
             </button>
           </form>

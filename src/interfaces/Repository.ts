@@ -3,10 +3,10 @@ interface Repository {
     name: string
     description: string
     language: string
-    forksCount: number
-    stargazersCount: number
-    updatedAt: string
-    htmlUrl: string
+    forks_count: number
+    stargazers_count: number
+    updated_at: string
+    html_url: string
     owner: {
       id: number
       login: string
