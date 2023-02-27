@@ -1,5 +1,5 @@
 import { FC, FormEvent, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
 import { AiOutlineSearch, AiOutlineArrowLeft } from 'react-icons/ai'
 
 const SearchUser: FC = () => {
@@ -15,7 +15,7 @@ const SearchUser: FC = () => {
 
   return (
     <>
-      <h1 className={`${toggle && "sm:flex hidden"} font-poppins font-bold text-gradient text-[24px]`}>GitHub Repos.</h1>
+      <h1 className={`${toggle && "sm:flex hidden"} font-poppins font-bold text-gradient text-[24px] cursor-pointer`} onClick={() => navigate('/')}>GitHub Repos.</h1>
       <form onSubmit={handleSubmit} className='sm:flex hidden justify-end flex-1 relative'>
         <input type="search" name="search" placeholder="Search user..." className="p-2 w-1/2 rounded-l-lg" />
         <button type="submit" className="p-3 rounded-r-lg px-6 font-medium text-[16px] text-primary bg-blue-gradient outline-none">
