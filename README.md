@@ -14,11 +14,26 @@ The following technologies and libraries were used to build this application:
 - [react-icons](https://react-icons.github.io/react-icons): A library of icons for React applications.
 
 ## How to Run the Application
-To run the application, you will need to have Node.js and npm (or Yarn) installed on your computer. Then, follow these steps:
+To run the application, you will need to have Node.js installed on your computer. 
+Go to [NodeJS web page](https://nodejs.org/es/) download and install the program.
 
-1. Clone the repository to your local machine: git clone https://github.com/pauciv/github-repositories-challenge.git.
-2. Install the dependencies: npm install or yarn install.
-3. Start the development server: npm run dev or yarn dev.
+Then, follow these steps:
+
+1. Clone the repository to your local machine:
+```
+git clone https://github.com/pauciv/github-repositories-challenge.git
+```
+
+2. Install the dependencies:
+```
+npm install
+```
+
+3. Start the development server:
+```
+npm run dev
+```
+
 4. Open your browser and go to http://localhost:5173/.
 
 ## Future Improvements
