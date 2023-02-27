@@ -5,7 +5,7 @@ import styles from '../style';
 
 type SearchRepositoryProps = {
     repositories: Repository[]
-    setFilteredRepositories: React.Dispatch<React.SetStateAction<Repository[]>>
+    setFilteredRepositories: React.Dispatch<React.SetStateAction<Repository[] | undefined>>
 }
 
 const SearchRepository = ({ repositories, setFilteredRepositories }: SearchRepositoryProps) => {

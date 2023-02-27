@@ -33,7 +33,7 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
     return 0
   })
 
-  const [filteredRepositories, setFilteredRepositories] = useState<Repository[]>(orderedRepositories)
+  const [filteredRepositories, setFilteredRepositories] = useState(orderedRepositories)
 
   if (status === 'loading') {
     return <p>Loading...</p>
