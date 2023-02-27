@@ -23,7 +23,7 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
   const orderedRepositories = repositories?.sort((a, b) => {
     const dateA = new Date(a.updated_at)
     const dateB = new Date(b.updated_at)
-  
+
     // Compare the dates and return either -1 (a should come first) or 1 (b should come first) to determine the sort order
     if (dateA > dateB) {
       return -1
@@ -45,10 +45,10 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
 
   return (
     <>
-        <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
-        {filteredRepositories?.map(repository => (
-          <RepositoryCard key={repository?.id} {...repository} />
-        ))}
+      <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
+      {filteredRepositories?.map(repository => (
+        <RepositoryCard key={repository?.id} {...repository} />
+      ))}
     </>
   )
 }

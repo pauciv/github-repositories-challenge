@@ -4,20 +4,20 @@ import { Repository } from '../interfaces';
 import styles from '../style';
 
 type SearchRepositoryProps = {
-    repositories: Repository[]
-    setFilteredRepositories: React.Dispatch<React.SetStateAction<Repository[] | undefined>>
+  repositories: Repository[]
+  setFilteredRepositories: React.Dispatch<React.SetStateAction<Repository[] | undefined>>
 }
 
 const SearchRepository = ({ repositories, setFilteredRepositories }: SearchRepositoryProps) => {
-    const [searchParmams, setSearchParams] = useSearchParams({ q: '' })
-    const searchValue = searchParmams.get('q') || ''
+  const [searchParmams, setSearchParams] = useSearchParams({ q: '' })
+  const searchValue = searchParmams.get('q') || ''
 
-    useEffect(() => {
-        const filtered = repositories.filter((repository) =>
-            repository.name.toLowerCase().includes(searchValue.toLowerCase())
-        )
-        setFilteredRepositories(filtered)
-    }, [searchValue, repositories, setFilteredRepositories, setSearchParams]);
+  useEffect(() => {
+    const filtered = repositories.filter((repository) =>
+      repository.name.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    setFilteredRepositories(filtered)
+  }, [searchValue, repositories, setFilteredRepositories, setSearchParams]);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearchParams({ q: event.target.value })

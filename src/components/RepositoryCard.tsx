@@ -13,7 +13,7 @@ const RepositoryCard = ({ name, description, language, forks_count, stargazers_c
           <p className="font-normal text-dimWhite text-[14px] sm:text-[16px] leading-[24px]">
             {description}
           </p>
-          <div className="flex text-white items-center text-[14px] sm:text-[16px]">
+          <div className="flex text-dimWhite items-center text-[14px] sm:text-[16px] mt-1">
             {language && <p className="mr-3">{language}</p>}
             {updated_at && <p>{formatUpdatedAt(updated_at)}</p>}
             {forks_count > 0 && <p className="flex items-center ml-4"><AiOutlineFork className="mr-[2px]" /> {forks_count}</p>}

@@ -1,11 +1,10 @@
 import { SearchUser } from '../components'
 
-const Navbar = () => {
-  return (
-    <nav className='w-full flex py-6 justify-between items-center navbar'>
-      <SearchUser />
-    </nav>
-  )
-}
+const Navbar = () => (
+  <nav className='w-full flex py-6 justify-between items-center navbar'>
+    <SearchUser />
+  </nav>
+)
+
 
 export default Navbar
