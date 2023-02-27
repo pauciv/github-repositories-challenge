@@ -26,7 +26,7 @@ const SearchUser: FC = () => {
         <div className={`sm:hidden flex justify-end items-center ${toggle && "w-full"}`}>
           {!toggle ? 
           <AiOutlineSearch
-            className="w-[28px] h-[28px] object-contain text-white m-1.5"
+            className="w-[28px] h-[28px] object-contain text-white m-2"
             onClick={() => setToggle(prev => !prev)}
           />
              : 
