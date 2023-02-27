@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
 import { useState } from "react"
 import { getRepositoriesByUser } from "../api"
-import { Repository } from "../interfaces"
 import RepositoryCard from "./RepositoryCard"
 import SearchRepository from "./SearchRepository"
 

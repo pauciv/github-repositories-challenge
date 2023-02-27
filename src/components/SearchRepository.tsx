@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { Repository } from '../interfaces';
-import styles from '../style';
 
 type SearchRepositoryProps = {
   repositories: Repository[]
