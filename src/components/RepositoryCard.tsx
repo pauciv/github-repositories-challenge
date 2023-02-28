@@ -5,7 +5,7 @@ import { Repository } from "../interfaces"
 const RepositoryCard = ({ name, description, language, forks_count, stargazers_count, updated_at, html_url }: Repository) => {
   return (
     <a href={html_url} target="_blank" rel="noreferrer">
-      <div className={`flex flex-row p-4 rounded-[20px] mb-3 feature-card border-b border-slate-800 w-full`}>
+      <div className={`flex flex-row p-4 rounded-[20px] feature-card border-b border-slate-800 w-full h-full`}>
         <div className="flex-1 flex flex-col ml-3">
           <p className="font-bold text-secondary text-[18px] sm:text-[20px] leading-[23.4px] pb-1">
             {truncateString(name, 30)}

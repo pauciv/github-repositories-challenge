@@ -45,9 +45,16 @@ const UserRepositories = ({ username }: UserRepositoriesProps) => {
   return (
     <>
       <SearchRepository repositories={repositories} setFilteredRepositories={setFilteredRepositories} />
-      {filteredRepositories?.map(repository => (
-        <RepositoryCard key={repository?.id} {...repository} />
-      ))}
+
+      <div className="flex flex-wrap mb-10">
+        {filteredRepositories?.map(repository => (
+          <div key={repository?.id} className="w-full lg:w-1/2">
+            <div className="p-2 w-full h-full">
+              <RepositoryCard {...repository} />
+            </div>
+          </div>
+        ))}
+      </div>
     </>
   )
 }
